@@ -37,6 +37,7 @@
 </template>
 
 <script>
+const USERS_API = 'https://jsonplaceholder.typicode.com/users';
 import axios from 'axios';
 
 export default {
@@ -94,9 +95,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users'
-      );
+      const response = await axios.get(USERS_API);
       this.users = response.data;
     } catch (error) {
       this.error = 'An error occurred while loading users';

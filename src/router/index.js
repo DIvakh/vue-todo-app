@@ -12,7 +12,12 @@ const routes = [
     path: '/user/:userId',
     name: 'UserProfile',
     component: UserProfile,
-    props: true
+    props: (route) => ({
+      userId: route.params.userId,
+      statusFilter: route.query.statusFilter || 'all',
+      userFilter: route.query.userFilter || 'all',
+      searchQuery: route.query.searchQuery || ''
+    })
   }
 ];
 

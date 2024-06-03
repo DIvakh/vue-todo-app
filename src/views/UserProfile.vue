@@ -81,6 +81,12 @@ export default {
         });
     }
   },
+
+  watch: {
+    statusFilter: 'updateQueryParams',
+    userFilter: 'updateQueryParams',
+    searchQuery: 'updateQueryParams'
+  },
   methods: {
     async fetchData() {
       try {
@@ -96,6 +102,17 @@ export default {
       } catch (error) {
         this.error = error;
       }
+    },
+    updateQueryParams() {
+      this.$router.push({
+        name: 'UserProfile',
+        params: { userId: this.userId },
+        query: {
+          statusFilter: this.statusFilter,
+          userFilter: this.userFilter,
+          searchQuery: this.searchQuery
+        }
+      });
     },
     toggleComplete(id) {
       const todo = this.todos.find((todo) => todo.id === id);
@@ -120,6 +137,10 @@ export default {
     }
   },
   mounted() {
+    const { statusFilter, userFilter, searchQuery } = this.$route.query;
+    if (statusFilter) this.statusFilter = statusFilter;
+    if (userFilter) this.userFilter = userFilter;
+    if (searchQuery) this.searchQuery = searchQuery;
     this.fetchData();
   }
 };
