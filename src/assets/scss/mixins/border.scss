@@ -1,0 +1,28 @@
+@mixin border($margin, $padding) {
+  padding-bottom: $padding;
+  margin-bottom: $margin;
+  border-bottom: 1px solid transparent;
+
+  -o-border-image: linear-gradient(
+    to right,
+    rgba(196, 196, 196, 0) 4.2%,
+    #7d7d7d 52.33%,
+    rgba(196, 196, 196, 0) 100.46%
+  );
+  border-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(4.2%, rgba(196, 196, 196, 0)),
+    color-stop(52.33%, #7d7d7d),
+    color-stop(100.46%, rgba(196, 196, 196, 0))
+  );
+  border-image: linear-gradient(
+    to right,
+    rgba(196, 196, 196, 0) 4.2%,
+    #7d7d7d 52.33%,
+    rgba(196, 196, 196, 0) 100.46%
+  );
+
+  border-image-slice: 1;
+}

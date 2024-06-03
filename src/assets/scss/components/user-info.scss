@@ -1,0 +1,42 @@
+@import '../variables/colors.scss';
+@import '../mixins/border.scss';
+
+.user-info {
+  margin: 10px;
+  @include border(30px, 20px);
+  @media (width < 600px) {
+    @include border(20px, 10px);
+  }
+
+  .container {
+    line-height: normal;
+    text-align: center;
+    color: $app-white;
+
+    a {
+      color: $app-white;
+      text-decoration: none;
+      transition: text-decoration 0.2s ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    h1 {
+      font-size: 2.25rem;
+      margin-bottom: 5px;
+      @media (width < 600px) {
+        font-size: 1.625rem;
+      }
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      @media (width < 600px) {
+        gap: 10px;
+      }
+    }
+  }
+}

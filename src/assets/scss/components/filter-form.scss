@@ -1,0 +1,42 @@
+@import '../variables/colors.scss';
+
+.filter-form {
+  line-height: normal;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  @media (width < 600px) {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  label {
+    padding-right: 3px;
+  }
+  input,
+  select,
+  option {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    height: 31px;
+  }
+  select {
+    width: 125px;
+  }
+  .search {
+    width: 350px;
+    input {
+      width: 100%;
+    }
+    @media (width < 500px) {
+      width: 100%;
+    }
+    @media (500px <= width < 1200px) {
+      width: 430px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import '../variables/colors.scss';
+@import '../mixins/border.scss';
+@import './user-info';
+@import './filter-form.scss';
+@import './todo-item.scss';
+@import './create-todo.scss';
+
+h2 {
+  text-align: center;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+  @media (600px > width) {
+    font-size: 1rem;
+  }
+}
+.todo-list {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  @include border(30px, 20px);
+  @media (600px > width) {
+    @include border(20px, 10px);
+  }
+}
+
+.error {
+  text-align: center;
+  color: $app-red;
+  font-size: 1.125rem;
+  margin: 10px 0;
+}
+.empty-list {
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 50px 0 30px 0;
+}

@@ -1,0 +1,37 @@
+@use './button.scss';
+@import '../variables/colors.scss';
+@import '../mixins/border.scss';
+
+.create-todo {
+  margin-bottom: 15px;
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    input {
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      width: 80px;
+
+      & + input {
+        width: 300px;
+      }
+
+      @media (425px >= width) {
+        &,
+        & + input {
+          width: 100%;
+        }
+      }
+    }
+    button {
+      @extend .button;
+      @media (600px > width) {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  }
+}

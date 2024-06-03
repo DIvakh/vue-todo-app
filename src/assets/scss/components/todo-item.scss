@@ -1,0 +1,47 @@
+@import '../variables/colors.scss';
+
+li.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 1.125rem;
+
+  @media (width < 600px) {
+    font-size: 16px;
+  }
+  input {
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.375rem;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    .star {
+      color: grey;
+
+      &.favorite {
+        color: gold;
+      }
+    }
+
+    &:hover {
+      transform: scale(110%);
+      .star {
+        color: $app-light-gray2;
+
+        &.favorite {
+          color: goldenrod;
+        }
+      }
+    }
+  }
+}
